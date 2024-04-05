@@ -1,6 +1,8 @@
 module github.com/srl-labs/ndk-greeter-go
 
-go 1.20
+go 1.21.1
+
+toolchain go1.22.1
 
 require (
 	github.com/RackSec/srslog v0.0.0-20180709174129-a4725f04ec91

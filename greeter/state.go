@@ -8,14 +8,14 @@ import (
 )
 
 // --8<-- [start:state-const].
-const greeterKeyPath = ".greeter"
+const greeterKeyPath = ".greeter.currentstatus"
 
 // --8<-- [end:state-const]
 
 // updateState updates the state of the application.
 // --8<-- [start:update-state].
 func (a *App) updateState(ctx context.Context) {
-	jsData, err := json.Marshal(a.configState)
+	jsData, err := json.Marshal(a.configState.CurrentStatus)
 	if err != nil {
 		a.logger.Info().Msgf("failed to marshal json data: %v", err)
 		return

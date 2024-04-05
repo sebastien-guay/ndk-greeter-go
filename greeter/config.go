@@ -19,6 +19,10 @@ type ConfigState struct {
 	// Name is the name to use in the greeting.
 	Name string `json:"name,omitempty"`
 	// Greeting is the greeting message to be displayed.
+	CurrentStatus CurrentStatus `json:"currentStatus,omitempty"`
+}
+
+type CurrentStatus struct {
 	Greeting string `json:"greeting,omitempty"`
 }
 
@@ -133,7 +137,7 @@ func (a *App) processConfig(ctx context.Context) {
 	}
 
 	// --8<-- [start:greeting-msg].
-	a.configState.Greeting = "👋 Hi " + a.configState.Name +
+	a.configState.CurrentStatus.Greeting = "👋 Hi " + a.configState.Name +
 		", SR Linux was last booted at " + uptime
 	// --8<-- [end:greeting-msg].
 }

@@ -17,11 +17,14 @@ module greeter {
                 "name of the person to greet";
             type string;
         }
-
-        leaf greeting {
-            description
-                "greeting the greeter will say";
-            type string;
+        container currentstatus {
+            description "The status";
+            leaf greeting {
+                description
+                    "greeting the greeter will say";
+                type string;
+                config false;
+            }
             config false;
         }
     }
